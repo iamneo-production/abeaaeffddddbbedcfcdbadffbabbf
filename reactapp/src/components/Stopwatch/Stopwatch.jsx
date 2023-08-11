@@ -73,7 +73,7 @@ function Stopwatch() {
           {button1State === "resume" && "resume"}
         </button>
         
-        <button onClick={handleButton2Click} disabled={button1State === "Start"} data-testid="reset" className="button">
+        <button onClick={handleButton2Click} disabled={button1State === "start"} data-testid="reset" className="button">
           {button2State === "reset" && "reset"}
         </button>
       </div>

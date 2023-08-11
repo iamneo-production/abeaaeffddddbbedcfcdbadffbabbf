@@ -61,7 +61,7 @@ function Stopwatch() {
 
   return (
     <div className="outer-main">
-      <p className="inner-main">
+      <div className="inner-main">
         <p className="head">React Stopwatch</p>
         <p data-testid="time" className="time">
           {`${time.hours.toString().padStart(2, "0")} : ${time.minutes.toString().padStart(2, "0")} : ${time.seconds.toString().padStart(2, "0")}`}
@@ -70,9 +70,10 @@ function Stopwatch() {
           {button1State === "Start" && "Start"}
           
         </button>
-        { button1State === "Pause" && "Pause"? <button onClick={handleButton1Click} data-testid="pause" className="button">
-        {button1State === "Pause" && "Pause"}
-        : null}  
+        { button1State === "Pause" && "Pause"? (<button onClick={handleButton1Click} data-testid="pause" className="button">
+        {button1State} )
+        : null
+        }  
         </button>
         <button onClick={handleButton1Click} data-testid="resume" className="button">
         {button1State === "Resume" && "Resume"}
@@ -82,7 +83,7 @@ function Stopwatch() {
         <button onClick={handleButton2Click} disabled={button1State === "Start"} data-testid="reset" className="button">
           {button2State === "Reset" && "Reset"}
         </button>
-      </p>
+      </div>
     </div>
   );
 }
